@@ -11,8 +11,8 @@ const CollectionPreview = ({ title, items }) => (
             {
                 items // potential lag in performance as functions are called each time component renders
                     .filter((item, idx) => idx < 4)
-                    .map(({ id, ...otherItemProps }) => (
-                        <CollectionItem key={id}  {...otherItemProps}/>
+                    .map((item) => (
+                        <CollectionItem key={item.id}  item={item}/>
                     ))
             }
         </div>
