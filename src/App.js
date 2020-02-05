@@ -36,6 +36,7 @@ class App extends React.Component {
       }
     });
     this.props.history.push('/dash');
+    console.log('HERE');
   }
 
   componentWillUnmount() {
