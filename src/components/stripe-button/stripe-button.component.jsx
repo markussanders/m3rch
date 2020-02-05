@@ -15,7 +15,7 @@ const StripeCheckoutButton = ({ price }) => {
     return (
         <StripeCheckout 
             label="Pay Now"
-            name="M3rch Clothing Ltd."
+            name="M3RCH Clothing Ltd."
             billingAddress
             shippingAddress
             image="https://svgshare.com/i/Hmm.svg"
