@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route, Redirect, useHistory } from "react-router-dom";
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
@@ -35,6 +35,9 @@ class App extends React.Component {
         setCurrentUser(userAuth);
       }
     });
+
+    let history = useHistory();
+    history.push('/dash');
   }
 
   componentWillUnmount() {
@@ -46,7 +49,7 @@ class App extends React.Component {
       <div>
         <Header />
         <Switch>
-          <Route exact path='/m3rch' render={<Redirect to="/dash"/>}/>
+          <Route exact path='/' render={<Redirect to="/dash"/>}/>
           <Route exact path='/dash' component={HomePage} />
           <Route path='/shop' component={ShopPage} />
           <Route exact path='/checkout' component={CheckoutPage} />
