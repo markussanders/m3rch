@@ -35,9 +35,6 @@ class App extends React.Component {
         setCurrentUser(userAuth);
       }
     });
-
-    let history = useHistory();
-    history.push('/dash');
   }
 
   componentWillUnmount() {
@@ -49,7 +46,7 @@ class App extends React.Component {
       <div>
         <Header />
         <Switch>
-          <Route exact path='/' render={<Redirect to="/dash"/>}/>
+          <Route exact path="/m3rch"><Redirect to="/dash" /></Route>
           <Route exact path='/dash' component={HomePage} />
           <Route path='/shop' component={ShopPage} />
           <Route exact path='/checkout' component={CheckoutPage} />
