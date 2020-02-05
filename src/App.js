@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect } from "react-router-dom";
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
@@ -35,6 +35,7 @@ class App extends React.Component {
         setCurrentUser(userAuth);
       }
     });
+    this.props.history.push('/dash');
   }
 
   componentWillUnmount() {
@@ -55,7 +56,7 @@ class App extends React.Component {
             path='/signin'
             render={() =>
               this.props.currentUser ? (
-                <Redirect to='/' />
+                <Redirect to='/dash' />
               ) : (
                 <SignInAndSignUpPage />
               )
