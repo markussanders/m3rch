@@ -11,3 +11,8 @@ a {
 * {
     box-sizing: border-box;
 }
+
+.logo {
+    width: 6em;
+    height: 3em;
+}
