@@ -20,22 +20,22 @@ const invertedButtonStyles = css`
     &:hover {
         background-color: black;
         color: white;
-        border: none;
     }
 `;
 
 const googleSignInStyles = css`
     background-color: #4285F4;
     color: white;
+    border: 1px solid #4285F4;
 
-    &.hover {
-        background-color: #357AE8;
-        border: none;
+    &:hover {
+        background-color: white;
+        color: #4285F4;
     }
 `;
 
 const getButtonStyles = props => {
-    if (props.googleSignIn) {
+    if (props.isGoogleSignIn) {
         return googleSignInStyles;
     }
 
