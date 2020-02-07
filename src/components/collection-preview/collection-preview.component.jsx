@@ -1,12 +1,14 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
+
 
 import CollectionItem from '../collection-item/collection-item.component.jsx';
 
 import './collection-preview.styles.scss';
 
-const CollectionPreview = ({ title, items }) => (
+const CollectionPreview = ({ title, items, history }) => (
     <div className="collection-preview" >
-        <h1 className="title">{title.toUpperCase()}</h1>
+        <h1 className="title" onClick={() => history.push(`/shop/${title.toLowerCase()}`)}>{title.toUpperCase()}</h1>
         <div className="preview">
             {
                 items // potential lag in performance as functions are called each time component renders
@@ -20,4 +22,4 @@ const CollectionPreview = ({ title, items }) => (
 )
 
 
-export default CollectionPreview;
+export default withRouter(CollectionPreview);
