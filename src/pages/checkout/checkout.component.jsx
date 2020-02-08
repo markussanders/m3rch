@@ -19,7 +19,7 @@ const CheckoutPage = ({ cartItems, total }) => (
       <div className='header-block'><span>Remove</span></div>
     </div>
     {
-      cartItems ? <div className="empty-cart-message">Your cart is currently empty!</div> : null
+      cartItems.length ? null : <div className="empty-cart-message">Your cart is currently empty!</div>
     }
     {
       cartItems.map(cartItem => <CheckoutItem key={cartItem.id} cartItem={cartItem} />)
