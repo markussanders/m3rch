@@ -12,31 +12,23 @@ import {
   ButtonsBarContainer
 } from './sign-in.styles';
 
-class SignIn extends React.Component {
-  constructor(props) {
-    super(props);
+const SignIn = ({ emailSignInStart }) => {
+  const [userCredentials, setCredentials] = useState({ email: '', password: ''});
 
-    this.state = {
-      email: '',
-      password: ''
-    };
-  }
-
-  handleSubmit = async event => {
+  const handleSubmit = async event => {
     event.preventDefault();
-    const { emailSignInStart } = this.props;
-    const { email, password } = this.state;
+    const { email, password } = userCredentials;
 
     emailSignInStart(email, password);
   };
 
-  handleChange = event => {
+  const handleChange = event => {
     const { value, name } = event.target;
 
-    this.setState({ [name]: value });
+    setCredentials({ [name]: value });
   };
 
-  render() {
+
     const { googleSignInStart } = this.props;
     return (
       <SignInContainer>
@@ -73,7 +65,6 @@ class SignIn extends React.Component {
         </form>
       </SignInContainer>
     );
-  }
 }
 
 const mapDispatchToProps = dispatch => ({
