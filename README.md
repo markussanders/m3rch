@@ -5,4 +5,4 @@ M3RCH Clothing is an eCommerce clothing application built using React with Redux
   GraphQL for API requests.
   
 I built this application with the intent on creating a reactive, performant, and large scale application with technologies/methodologies I had not used
-before. Some of these include: Thunk, NoSQL databases, Redux Sagas, Express, React Hooks and GraphQL.
+before. Some of these include: Thunk, NoSQL databases, Redux Sagas, Express, React Hooks and GraphQL with Apollo.
