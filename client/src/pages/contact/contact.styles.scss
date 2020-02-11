@@ -1,0 +1,24 @@
+.contact-page {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 10% auto;
+
+    .title {
+        font-size: 38px;
+        margin: 0 auto 30px;
+    }
+
+    .subtitle {
+        font-size: 28px;
+        margin: 20px 0;
+    
+    }
+
+    .content {
+        font-size: 20px;
+        margin: 20px 0;
+    }
+
+
+}

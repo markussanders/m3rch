@@ -9,6 +9,7 @@ import HomePage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.component';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import CheckoutPage from './pages/checkout/checkout.component';
+import ContactPage from './pages/contact/contact.component';
 
 import Header from './components/header/header.component';
 
@@ -32,6 +33,7 @@ const App = ({ checkUserSession, currentUser }) => {
           path='/signin'
           render={() => currentUser ? <Redirect to='/' /> : <SignInAndSignUpPage /> }
         />
+        <Route exact path='/contact' component={ContactPage} />
       </Switch>
     </div>
   );
