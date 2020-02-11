@@ -7,6 +7,7 @@ import HomePage from '../pages/homepage/homepage.component';
 import ShopPage from '../pages/shop/shop.component';
 import SignInAndSignUpPage from '../pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import { default as CheckoutPage } from '../pages/checkout/checkout.container';
+import ContactPage from '../pages/contact/contact.component';
 
 import { default as Header } from '../components/header/header.container';
 
@@ -57,6 +58,7 @@ class App extends React.Component {
               )
             }
           />
+          <Route exact path='/contact' component={ContactPage} />
         </Switch>
       </div>
     );
