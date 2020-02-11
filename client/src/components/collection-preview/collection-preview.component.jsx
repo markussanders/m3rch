@@ -1,25 +1,27 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
+import CollectionItem from '../collection-item/collection-item.component';
 
-import CollectionItem from '../collection-item/collection-item.component.jsx';
+import {
+  CollectionPreviewContainer,
+  TitleContainer,
+  PreviewContainer
+} from './collection-preview.styles';
 
-import './collection-preview.styles.scss';
-
-const CollectionPreview = ({ title, items, history }) => (
-    <div className="collection-preview" >
-        <h1 className="title" onClick={() => history.push(`/shop/${title.toLowerCase()}`)}>{title.toUpperCase()}</h1>
-        <div className="preview">
-            {
-                items // potential lag in performance as functions are called each time component renders
-                    .filter((item, idx) => idx < 4)
-                    .map((item) => (
-                        <CollectionItem key={item.id}  item={item}/>
-                    ))
-            }
-        </div>
-    </div>
-)
-
+const CollectionPreview = ({ title, items, history, match, routeName }) => (
+  <CollectionPreviewContainer>
+    <TitleContainer onClick={() => history.push(`${match.path}/${routeName}`)}>
+      {title.toUpperCase()}
+    </TitleContainer>
+    <PreviewContainer>
+      {items
+        .filter((item, idx) => idx < 4)
+        .map(item => (
+          <CollectionItem key={item.id} item={item} />
+        ))}
+    </PreviewContainer>
+  </CollectionPreviewContainer>
+);
 
 export default withRouter(CollectionPreview);
