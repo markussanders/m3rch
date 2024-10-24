@@ -2,8 +2,8 @@
   "name": "m3rch-clothing-server",
   "version": "1.0.0",
   "engines": {
-    "node": "11.13.0",
-    "npm": "6.7.0"
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
   },
   "scripts": {
     "client": "cd client && yarn start",
